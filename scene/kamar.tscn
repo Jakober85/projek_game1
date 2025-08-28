@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b644ae1dcu1ms"]
+[gd_scene load_steps=22 format=3 uid="uid://b644ae1dcu1ms"]
 
 [ext_resource type="Texture2D" uid="uid://nd2r3loibwok" path="res://bahan game/kamar v2.png" id="1_nm02h"]
 [ext_resource type="Texture2D" uid="uid://cnu13yifwwosa" path="res://bahan game/New Piskel-1.png (1).png" id="2_ijddk"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bp6yfc2w5mcyk" path="res://bahan game/pc.png" id="9_anfbi"]
 [ext_resource type="Texture2D" uid="uid://dtgidncovuvn7" path="res://keyboard.png" id="10_54moy"]
 [ext_resource type="Texture2D" uid="uid://bq2c3s6e3cb4i" path="res://bahan game/mouse.png" id="11_agex8"]
-[ext_resource type="Script" uid="uid://c3rosew88bje5" path="res://ruangtamu.gd" id="12_anfbi"]
+[ext_resource type="PackedScene" uid="uid://dta7ne7ohbnyy" path="res://scene/raka.tscn" id="12_hubrv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nm02h"]
 size = Vector2(4, 235)
@@ -40,122 +40,118 @@ size = Vector2(30, 11)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_anfbi"]
 size = Vector2(67, 6)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_54moy"]
-size = Vector2(50, 9)
-
 [node name="Node2D" type="Node2D"]
 
-[node name="kamar" type="Sprite2D" parent="."]
+[node name="props" type="Node2D" parent="."]
+
+[node name="kamar" type="Sprite2D" parent="props"]
 position = Vector2(181, 128)
 texture = ExtResource("1_nm02h")
 
-[node name="penghalang" type="StaticBody2D" parent="kamar"]
+[node name="penghalang" type="StaticBody2D" parent="props/kamar"]
 position = Vector2(-158, 1.5)
 
-[node name="penghalang" type="CollisionShape2D" parent="kamar/penghalang"]
+[node name="penghalang" type="CollisionShape2D" parent="props/kamar/penghalang"]
 shape = SubResource("RectangleShape2D_nm02h")
 
-[node name="penghalang 2" type="StaticBody2D" parent="kamar"]
+[node name="penghalang 2" type="StaticBody2D" parent="props/kamar"]
 position = Vector2(23, -29)
 
-[node name="penghalang 2" type="CollisionShape2D" parent="kamar/penghalang 2"]
+[node name="penghalang 2" type="CollisionShape2D" parent="props/kamar/penghalang 2"]
 position = Vector2(-21, -54.5)
 shape = SubResource("RectangleShape2D_ijddk")
 
-[node name="penghalang 3" type="StaticBody2D" parent="kamar"]
+[node name="penghalang 3" type="StaticBody2D" parent="props/kamar"]
 
-[node name="penghalang 3" type="CollisionShape2D" parent="kamar/penghalang 3"]
+[node name="penghalang 3" type="CollisionShape2D" parent="props/kamar/penghalang 3"]
 position = Vector2(35.5, 114.5)
 shape = SubResource("RectangleShape2D_6l54u")
 
-[node name="penghalang 4" type="StaticBody2D" parent="kamar"]
+[node name="penghalang 4" type="StaticBody2D" parent="props/kamar"]
 
-[node name="penghalang 4" type="CollisionShape2D" parent="kamar/penghalang 4"]
+[node name="penghalang 4" type="CollisionShape2D" parent="props/kamar/penghalang 4"]
 position = Vector2(157.5, 28)
 shape = SubResource("RectangleShape2D_dwgjp")
 
-[node name="penghalang 5" type="StaticBody2D" parent="kamar"]
+[node name="penghalang 5" type="StaticBody2D" parent="props/kamar"]
 
-[node name="penghalang 5" type="CollisionShape2D" parent="kamar/penghalang 5"]
+[node name="penghalang 5" type="CollisionShape2D" parent="props/kamar/penghalang 5"]
 position = Vector2(-149, 114)
 shape = SubResource("RectangleShape2D_l5sdw")
 
-[node name="kasur" type="Sprite2D" parent="."]
+[node name="kasur" type="Sprite2D" parent="props"]
 position = Vector2(320, 115)
 texture = ExtResource("2_ijddk")
 
-[node name="kasur" type="StaticBody2D" parent="kasur"]
+[node name="kasur" type="StaticBody2D" parent="props/kasur"]
 
-[node name="kasur" type="CollisionShape2D" parent="kasur/kasur"]
+[node name="kasur" type="CollisionShape2D" parent="props/kasur/kasur"]
 position = Vector2(0, -13.25)
 shape = SubResource("RectangleShape2D_unegn")
 
-[node name="meja" type="Sprite2D" parent="."]
+[node name="meja" type="Sprite2D" parent="props"]
 position = Vector2(284, 110)
 texture = ExtResource("3_6l54u")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="meja"]
+[node name="StaticBody2D" type="StaticBody2D" parent="props/meja"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="meja/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="props/meja/StaticBody2D"]
 position = Vector2(0, -13.75)
 shape = SubResource("RectangleShape2D_vyaed")
 
-[node name="jendela" type="Sprite2D" parent="."]
+[node name="jendela" type="Sprite2D" parent="props"]
 position = Vector2(144, 70)
 texture = ExtResource("4_dwgjp")
 
-[node name="Lemari2" type="Sprite2D" parent="."]
+[node name="Lemari2" type="Sprite2D" parent="props"]
 position = Vector2(232, 86)
 texture = ExtResource("5_ijddk")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Lemari2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="props/Lemari2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lemari2/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="props/Lemari2/StaticBody2D"]
 position = Vector2(0, -4.5)
 shape = SubResource("RectangleShape2D_1iuhv")
 
-[node name="Karpet" type="Sprite2D" parent="."]
+[node name="Karpet" type="Sprite2D" parent="props"]
 position = Vector2(179.5, 165)
 scale = Vector2(1.55128, 1.1875)
 texture = ExtResource("6_6l54u")
 
-[node name="MejaTamu" type="Sprite2D" parent="."]
+[node name="MejaTamu" type="Sprite2D" parent="props"]
 position = Vector2(62, 111)
 texture = ExtResource("7_dwgjp")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="MejaTamu"]
+[node name="StaticBody2D" type="StaticBody2D" parent="props/MejaTamu"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MejaTamu/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="props/MejaTamu/StaticBody2D"]
 position = Vector2(-5.5, -14)
 shape = SubResource("RectangleShape2D_anfbi")
 
-[node name="Monitor" type="Sprite2D" parent="."]
+[node name="Monitor" type="Sprite2D" parent="props"]
 position = Vector2(59, 98)
 scale = Vector2(0.65625, 0.46875)
 texture = ExtResource("8_1iuhv")
 
-[node name="Pc" type="Sprite2D" parent="."]
+[node name="Pc" type="Sprite2D" parent="props"]
 z_index = 1
 position = Vector2(81.25, 98)
 scale = Vector2(0.316667, 0.34375)
 texture = ExtResource("9_anfbi")
 
-[node name="Keyboard" type="Sprite2D" parent="."]
+[node name="Keyboard" type="Sprite2D" parent="props"]
 position = Vector2(58, 110)
 scale = Vector2(0.351563, 0.476563)
 texture = ExtResource("10_54moy")
 
-[node name="Mouse" type="Sprite2D" parent="."]
+[node name="Mouse" type="Sprite2D" parent="props"]
 position = Vector2(78, 107)
 scale = Vector2(0.53125, 0.59375)
 texture = ExtResource("11_agex8")
 
-[node name="Area2D" type="Area2D" parent="."]
-z_index = 2
-script = ExtResource("12_anfbi")
+[node name="raka" parent="." instance=ExtResource("12_hubrv")]
+position = Vector2(181, 154)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(68, 244.5)
-shape = SubResource("RectangleShape2D_54moy")
-
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(184, 130)
+zoom = Vector2(2.03, 2.03)
