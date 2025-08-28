@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://bjh5wt6b2eipr"]
+
+[ext_resource type="Texture2D" uid="uid://bruu1fnmdnoby" path="res://bahan game/ruang tamu.png" id="1_w6k1p"]
+[ext_resource type="Texture2D" uid="uid://cnisbstphj2xw" path="res://bahan game/pintu.png" id="2_c8rcp"]
+[ext_resource type="Texture2D" uid="uid://tu8u20n7tgvd" path="res://bahan game/sofa panjang 1.png" id="3_6i01l"]
+[ext_resource type="Texture2D" uid="uid://7g23gl5r276n" path="res://bahan game/sofa panjang2.png" id="4_f7ifx"]
+[ext_resource type="Texture2D" uid="uid://bnbm8yqa8oro3" path="res://bahan game/meja tamu.png" id="5_1pff0"]
+[ext_resource type="Texture2D" uid="uid://b7kwpo1g2dgn5" path="res://bahan game/karpet.png" id="6_63w5q"]
+[ext_resource type="Texture2D" uid="uid://5vfff7hnblxg" path="res://bahan game/sofa.png" id="7_m3352"]
+[ext_resource type="Script" uid="uid://cf0hgv6gcgwi1" path="res://area_2d.gd" id="8_c8rcp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8rcp"]
+size = Vector2(479, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6i01l"]
+size = Vector2(31, 64.625)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ruang tamu" type="Sprite2D" parent="."]
+position = Vector2(812, 514)
+texture = ExtResource("1_w6k1p")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ruang tamu"]
+position = Vector2(8, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ruang tamu/StaticBody2D"]
+position = Vector2(-8.5, -72)
+shape = SubResource("RectangleShape2D_c8rcp")
+
+[node name="Pintu" type="Sprite2D" parent="."]
+position = Vector2(911, 445)
+texture = ExtResource("2_c8rcp")
+
+[node name="SofaPanjang1" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(810, 566)
+texture = ExtResource("3_6i01l")
+
+[node name="SofaPanjang2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(834, 566)
+texture = ExtResource("4_f7ifx")
+
+[node name="MejaTamu" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(834, 617)
+scale = Vector2(1.40625, 1.42647)
+texture = ExtResource("5_1pff0")
+
+[node name="Karpet" type="Sprite2D" parent="."]
+position = Vector2(911, 488)
+scale = Vector2(0.538461, 0.749998)
+texture = ExtResource("6_63w5q")
+
+[node name="Sofa" type="Sprite2D" parent="."]
+position = Vector2(866, 566)
+texture = ExtResource("7_m3352")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("8_c8rcp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(911.5, 444.688)
+shape = SubResource("RectangleShape2D_6i01l")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
